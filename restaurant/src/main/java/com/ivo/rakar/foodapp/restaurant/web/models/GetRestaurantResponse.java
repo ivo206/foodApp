@@ -1,26 +1,28 @@
-package com.ivo.rakar.foodapp.restaurant.domain.models;
+package com.ivo.rakar.foodapp.restaurant.web.models;
 
-import javax.persistence.*;
+import com.ivo.rakar.foodapp.restaurant.domain.models.Location;
+import com.ivo.rakar.foodapp.restaurant.domain.models.Menu;
+import com.ivo.rakar.foodapp.restaurant.domain.models.Restaurant;
 
-@Entity
-public class Restaurant {
-    @Id
-    @GeneratedValue
+import javax.persistence.Embedded;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+public class GetRestaurantResponse {
+
     private Long id;
     private String name;
-    @Embedded
     private Location location;
     private double rating;
-    @Embedded
     private Menu menu;
 
-    public Restaurant() {
-    }
-
-    public Restaurant(String name, Location location, Menu menu) {
-        this.name = name;
-        this.location = location;
-        this.menu = menu;
+    public GetRestaurantResponse(Restaurant restaurant) {
+        if(restaurant != null) {
+            this.name = restaurant.getName();
+            this.location = restaurant.getLocation();
+            this.menu = restaurant.getMenu();
+            this.rating = restaurant.getRating();
+        }
     }
 
     public Long getId() {
