@@ -28,7 +28,7 @@ public class OrderController {
                         .map(li -> new MenuItemIdAndQuantity(li.getMenuItemId(), li.getQuantity()))
                         .collect(Collectors.toList()));
 
-        return new CreateOrderResponse(1);
+        return new CreateOrderResponse(order.getId());
     }
 
 }

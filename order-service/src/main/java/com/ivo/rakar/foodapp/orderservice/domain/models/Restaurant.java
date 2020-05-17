@@ -13,6 +13,9 @@ public class Restaurant {
     private Long id;
     private String name;
 
+    public Restaurant() {
+    }
+
     @Embedded
     @ElementCollection
     @CollectionTable()

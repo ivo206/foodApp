@@ -13,6 +13,9 @@ public class MenuItem {
     private Money price;
     private String itemDescription;
 
+    public MenuItem() {
+    }
+
     public MenuItem(String id, String itemName, Money price, String itemDescription) {
         this.id = id;
         this.itemName = itemName;

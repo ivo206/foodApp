@@ -29,6 +29,9 @@ public class Order {
     @Embedded
     private PaymentInformation paymentInformation;
 
+    public Order() {
+    }
+
     public Order(List<OrderLineItem> orderItems, long restaurantId, long consumerId) {
         this.orderItems = new OrderItems(orderItems);
         this.restaurantId = restaurantId;
