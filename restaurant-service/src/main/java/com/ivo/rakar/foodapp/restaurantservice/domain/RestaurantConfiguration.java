@@ -1,8 +1,11 @@
 package com.ivo.rakar.foodapp.restaurantservice.domain;
 
+import io.eventuate.tram.spring.events.publisher.TramEventsPublisherConfiguration;
+import io.eventuate.tram.spring.messaging.producer.jdbc.TramMessageProducerJdbcConfiguration;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -10,6 +13,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories
 @EnableTransactionManagement
 @EntityScan
+@Import({TramEventsPublisherConfiguration.class, TramMessageProducerJdbcConfiguration.class})
 public class RestaurantConfiguration {
     @Bean
     public RestaurantService restaurantService() {
