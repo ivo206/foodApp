@@ -1,5 +1,7 @@
 package com.ivo.rakar.foodapp.restaurantservice.domain.models;
 
+import com.ivo.rakar.foodapp.restaurantservice.events.Menu;
+
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

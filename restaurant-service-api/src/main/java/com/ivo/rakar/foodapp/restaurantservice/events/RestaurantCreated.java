@@ -1,4 +1,4 @@
-package com.ivo.rakar.foodapp.restaurantservice.domain.models;
+package com.ivo.rakar.foodapp.restaurantservice.events;
 
 import io.eventuate.tram.events.common.DomainEvent;
 

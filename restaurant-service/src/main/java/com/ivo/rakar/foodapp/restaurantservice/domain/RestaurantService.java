@@ -1,8 +1,8 @@
 package com.ivo.rakar.foodapp.restaurantservice.domain;
 
 import com.ivo.rakar.foodapp.restaurantservice.domain.models.Restaurant;
-import com.ivo.rakar.foodapp.restaurantservice.domain.models.RestaurantCreated;
 import com.ivo.rakar.foodapp.restaurantservice.domain.repositories.RestaurantRepository;
+import com.ivo.rakar.foodapp.restaurantservice.events.RestaurantCreated;
 import com.ivo.rakar.foodapp.restaurantservice.web.models.CreateRestaurantRequest;
 import io.eventuate.tram.events.publisher.DomainEventPublisher;
 import org.springframework.beans.factory.annotation.Autowired;

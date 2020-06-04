@@ -1,0 +1,11 @@
+
+subprojects {
+
+	repositories {
+		mavenCentral()
+		jcenter()
+	}
+
+}
+
+

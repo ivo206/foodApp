@@ -1,4 +1,4 @@
-package com.ivo.rakar.foodapp.restaurantservice.domain.models;
+package com.ivo.rakar.foodapp.restaurantservice.events;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;

@@ -1,8 +1,8 @@
 package com.ivo.rakar.foodapp.restaurantservice.web.models;
 
 import com.ivo.rakar.foodapp.restaurantservice.domain.models.Location;
-import com.ivo.rakar.foodapp.restaurantservice.domain.models.Menu;
 import com.ivo.rakar.foodapp.restaurantservice.domain.models.Restaurant;
+import com.ivo.rakar.foodapp.restaurantservice.events.Menu;
 
 public class GetRestaurantResponse {
 

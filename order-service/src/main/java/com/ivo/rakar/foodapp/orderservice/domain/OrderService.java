@@ -12,11 +12,15 @@ import java.util.List;
 import java.util.stream.Collectors;
 @Transactional
 public class OrderService {
-    @Autowired
+
     private OrderRepository orderRepository;
 
-    @Autowired
     private RestaurantRepository restaurantRepository;
+
+    public OrderService(OrderRepository orderRepository, RestaurantRepository restaurantRepository) {
+        this.orderRepository = orderRepository;
+        this.restaurantRepository = restaurantRepository;
+    }
 
     public Order create(long consumerId, long restaurantId, List<MenuItemIdAndQuantity> lineItems) {
         Restaurant restaurant = restaurantRepository.findById(restaurantId)
