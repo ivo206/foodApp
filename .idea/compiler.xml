@@ -2,7 +2,22 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="foodApp.order-service" target="11" />
+      <module name="foodApp.order-service.main" target="11" />
+      <module name="foodApp.order-service.test" target="11" />
+      <module name="foodApp.restaurant-service" target="11" />
+      <module name="foodApp.restaurant-service-api" target="11" />
+      <module name="foodApp.restaurant-service-api.main" target="11" />
+      <module name="foodApp.restaurant-service-api.test" target="11" />
+      <module name="foodApp.restaurant-service.main" target="11" />
+      <module name="foodApp.restaurant-service.test" target="11" />
+      <module name="order-service" target="11" />
+      <module name="order-service.main" target="11" />
+      <module name="order-service.test" target="11" />
       <module name="restaurant" target="11" />
+      <module name="restaurant-service" target="11" />
+      <module name="restaurant-service.main" target="11" />
+      <module name="restaurant-service.test" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

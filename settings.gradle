@@ -1,0 +1,3 @@
+include ":restaurant-service-api"
+include ":order-service"
+include ":restaurant-service"

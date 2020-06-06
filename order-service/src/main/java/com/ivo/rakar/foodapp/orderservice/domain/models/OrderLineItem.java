@@ -1,5 +1,6 @@
 package com.ivo.rakar.foodapp.orderservice.domain.models;
 
+import com.ivo.rakar.foodapp.restaurantservice.events.Money;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -16,9 +17,9 @@ public class OrderLineItem {
     private String menuItemId;
     private String name;
 
-    @Embedded
-    @AttributeOverrides(@AttributeOverride(name="amount", column=@Column(name="price")))
-    private Money price;
+    //@Embedded
+    //@AttributeOverrides(@AttributeOverride(name="amount", column=@Column(name="price")))
+    private double price;
 
     @Override
     public String toString() {
@@ -35,15 +36,15 @@ public class OrderLineItem {
         return HashCodeBuilder.reflectionHashCode(this);
     }
 
-    public OrderLineItem(String menuItemId, String name, Money price, int quantity) {
+    public OrderLineItem(String menuItemId, String name, double price, int quantity) {
         this.menuItemId = menuItemId;
         this.name = name;
         this.price = price;
         this.quantity = quantity;
     }
 
-    public Money deltaForChangedQuantity(int newQuantity) {
-        return price.multiply(newQuantity - quantity);
+    public double deltaForChangedQuantity(int newQuantity) {
+        return price * (newQuantity - quantity);
     }
 
     public void setQuantity(int quantity) {
@@ -58,7 +59,7 @@ public class OrderLineItem {
         this.name = name;
     }
 
-    public void setPrice(Money price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -74,12 +75,12 @@ public class OrderLineItem {
         return name;
     }
 
-    public Money getPrice() {
+    public double getPrice() {
         return price;
     }
 
 
-    public Money getTotal() {
-        return price.multiply(quantity);
+    public double getTotal() {
+        return price * (quantity);
     }
 }

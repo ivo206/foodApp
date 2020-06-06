@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/foodApp.iml" filepath="$PROJECT_DIR$/.idea/foodApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/foodApp.order-service.iml" filepath="$PROJECT_DIR$/.idea/modules/foodApp.order-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/foodApp.order-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/foodApp.order-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/foodApp.order-service.test.iml" filepath="$PROJECT_DIR$/.idea/modules/foodApp.order-service.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1069627293/foodApp.restaurant-service.iml" filepath="$PROJECT_DIR$/.idea/modules/1069627293/foodApp.restaurant-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2029514774/foodApp.restaurant-service-api.iml" filepath="$PROJECT_DIR$/.idea/modules/-2029514774/foodApp.restaurant-service-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2029514774/foodApp.restaurant-service-api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-2029514774/foodApp.restaurant-service-api.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2029514774/foodApp.restaurant-service-api.test.iml" filepath="$PROJECT_DIR$/.idea/modules/-2029514774/foodApp.restaurant-service-api.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1069627293/foodApp.restaurant-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/1069627293/foodApp.restaurant-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1069627293/foodApp.restaurant-service.test.iml" filepath="$PROJECT_DIR$/.idea/modules/1069627293/foodApp.restaurant-service.test.iml" />
     </modules>
   </component>
 </project>
