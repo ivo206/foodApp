@@ -7,7 +7,7 @@ import javax.persistence.Embeddable;
 @Embeddable
 @Access(AccessType.FIELD)
 public class MenuItem {
-    private int id;
+    private String id;
     private String description;
     private double rating;
     private double price;
@@ -16,17 +16,18 @@ public class MenuItem {
     public MenuItem() {
     }
 
-    public MenuItem(String description, double price, String name) {
+    public MenuItem(String id, String description, double price, String name) {
+        this.id = id;
         this.description = description;
         this.price = price;
         this.name = name;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

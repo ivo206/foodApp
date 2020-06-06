@@ -25,6 +25,6 @@ public class OrderEventConsumer {
         String restaurantIds = de.getAggregateId();
         long id = Long.parseLong(restaurantIds);
         Menu menu = de.getEvent().getMenu();
-        //orderService.createMenu(id, de.getEvent().getName(), menu);
+        orderService.createMenu(id, de.getEvent().getName(), menu);
     }
 }

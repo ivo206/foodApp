@@ -5,7 +5,9 @@ import com.ivo.rakar.foodapp.orderservice.domain.models.exceptions.OrderItemNotF
 import com.ivo.rakar.foodapp.orderservice.domain.models.exceptions.RestaurantNotFoundException;
 import com.ivo.rakar.foodapp.orderservice.domain.repositories.OrderRepository;
 import com.ivo.rakar.foodapp.orderservice.domain.repositories.RestaurantRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.ivo.rakar.foodapp.restaurantservice.events.Menu;
+import com.ivo.rakar.foodapp.restaurantservice.events.MenuItem;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -20,6 +22,12 @@ public class OrderService {
     public OrderService(OrderRepository orderRepository, RestaurantRepository restaurantRepository) {
         this.orderRepository = orderRepository;
         this.restaurantRepository = restaurantRepository;
+    }
+
+    @Transactional(propagation = Propagation.MANDATORY)
+    public void createMenu(long restaurantId, String name, Menu menu) {
+        Restaurant restaurant = new Restaurant(restaurantId, name, menu.getItems());
+        restaurantRepository.save(restaurant);
     }
 
     public Order create(long consumerId, long restaurantId, List<MenuItemIdAndQuantity> lineItems) {
@@ -39,7 +47,7 @@ public class OrderService {
         return lineItems.stream().map(li -> {
             MenuItem m = restaurant.findMenuItem(li.getMenuItemId())
                     .orElseThrow(() -> new OrderItemNotFoundException(li.getMenuItemId()));
-            return new OrderLineItem(li.getMenuItemId(), m.getItemName(), m.getPrice(), li.getQuantity());
+            return new OrderLineItem(li.getMenuItemId(), m.getName(), m.getPrice(), li.getQuantity());
         }).collect(Collectors.toList());
     }
 

@@ -1,5 +1,7 @@
 package com.ivo.rakar.foodapp.orderservice.domain.models;
 
+import com.ivo.rakar.foodapp.restaurantservice.events.MenuItem;
+
 import javax.persistence.*;
 import java.util.List;
 import java.util.Optional;
@@ -18,7 +20,7 @@ public class Restaurant {
 
     @Embedded
     @ElementCollection
-    @CollectionTable()
+    @CollectionTable(name = "order_service_restaurant_menu_items")
     private List<MenuItem> menu;
 
     public Restaurant(Long id, String name, List<MenuItem> menu) {

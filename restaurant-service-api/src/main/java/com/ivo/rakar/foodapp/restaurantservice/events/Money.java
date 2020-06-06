@@ -1,4 +1,4 @@
-package com.ivo.rakar.foodapp.orderservice.domain.models;
+package com.ivo.rakar.foodapp.restaurantservice.events;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -8,15 +8,27 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Embeddable;
 import java.math.BigDecimal;
+import java.math.MathContext;
+
 @Embeddable
 @Access(AccessType.FIELD)
 public class Money {
     public static Money ZERO = new Money(0);
 
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
+    }
+
     private BigDecimal amount;
 
     private Money() {
     }
+
+    public Money(double d) { this.amount = new BigDecimal(d, MathContext.DECIMAL64); }
 
     public Money(BigDecimal amount) {
         this.amount = amount;
