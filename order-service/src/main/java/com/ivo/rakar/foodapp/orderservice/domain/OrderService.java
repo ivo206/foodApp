@@ -30,15 +30,23 @@ public class OrderService {
         restaurantRepository.save(restaurant);
     }
 
+    @Transactional(propagation = Propagation.MANDATORY)
+    public void updateMenu(long restaurantId, String name, Menu menu) {
+        Restaurant restaurant = restaurantRepository.findById(restaurantId)
+                .orElseThrow(() -> new RestaurantNotFoundException(restaurantId));
+
+        restaurant.setName(name);
+        restaurant.setMenu(menu.getItems());
+        restaurantRepository.save(restaurant);
+    }
+
     public Order create(long consumerId, long restaurantId, List<MenuItemIdAndQuantity> lineItems) {
         Restaurant restaurant = restaurantRepository.findById(restaurantId)
                 .orElseThrow(() -> new RestaurantNotFoundException(restaurantId));
 
         List<OrderLineItem> orderItems = createOrderItems(lineItems, restaurant);
-
         Order order = new Order(orderItems, restaurantId, consumerId);
         orderRepository.save(order);
-
         return order;
     }
 
