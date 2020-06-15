@@ -17,6 +17,7 @@ public class UpdateRestaurantResponse {
             this.location = restaurant.getLocation();
             this.menu = restaurant.getMenu();
             this.rating = restaurant.getRating();
+            this.id = restaurant.getId();
         }
     }
 

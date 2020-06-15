@@ -40,6 +40,11 @@ public class OrderService {
         restaurantRepository.save(restaurant);
     }
 
+    @Transactional(propagation = Propagation.MANDATORY)
+    public void deleteMenu(long restaurantId) {
+        restaurantRepository.deleteById(restaurantId);
+    }
+
     public Order create(long consumerId, long restaurantId, List<MenuItemIdAndQuantity> lineItems) {
         Restaurant restaurant = restaurantRepository.findById(restaurantId)
                 .orElseThrow(() -> new RestaurantNotFoundException(restaurantId));
