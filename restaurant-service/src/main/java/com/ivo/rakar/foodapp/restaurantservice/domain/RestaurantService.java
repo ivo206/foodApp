@@ -4,6 +4,7 @@ import com.ivo.rakar.foodapp.restaurantservice.domain.models.Restaurant;
 import com.ivo.rakar.foodapp.restaurantservice.domain.models.RestaurantNotFoundException;
 import com.ivo.rakar.foodapp.restaurantservice.domain.repositories.RestaurantRepository;
 import com.ivo.rakar.foodapp.restaurantservice.events.RestaurantCreated;
+import com.ivo.rakar.foodapp.restaurantservice.events.RestaurantDeleted;
 import com.ivo.rakar.foodapp.restaurantservice.events.RestaurantUpdated;
 import com.ivo.rakar.foodapp.restaurantservice.web.models.CreateRestaurantRequest;
 import com.ivo.rakar.foodapp.restaurantservice.web.models.UpdateRestaurantRequest;
@@ -49,5 +50,10 @@ public class RestaurantService {
         restaurantRepository.save(restaurant);
         domainEventPublisher.publish(Restaurant.class, restaurant.getId(), Collections.singletonList(new RestaurantUpdated(restaurant.getName(), restaurant.getMenu())));
         return restaurant;
+    }
+
+    public void delete(long id) {
+        restaurantRepository.deleteById(id);
+        domainEventPublisher.publish(Restaurant.class, Long.valueOf(id), Collections.singletonList(new RestaurantDeleted()));
     }
 }
