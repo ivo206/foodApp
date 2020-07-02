@@ -3,13 +3,16 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
       <module name="com.ivo.rakar.foodapp.foodApp.order-service.main" target="11" />
-      <module name="com.ivo.rakar.foodapp.foodApp.order-service.main~3" target="11" />
+      <module name="com.ivo.rakar.foodapp.foodApp.order-service.main~4" target="11" />
       <module name="com.ivo.rakar.foodapp.foodApp.restaurant-service" target="11" />
       <module name="com.ivo.rakar.foodapp.foodApp.restaurant-service-api" target="11" />
       <module name="com.ivo.rakar.foodapp.foodApp.restaurant-service-api.main" target="11" />
       <module name="com.ivo.rakar.foodapp.foodApp.restaurant-service-api.test" target="11" />
       <module name="com.ivo.rakar.foodapp.foodApp.restaurant-service.main" target="11" />
       <module name="com.ivo.rakar.foodapp.foodApp.restaurant-service.test" target="11" />
+      <module name="consumer-service" target="11" />
+      <module name="consumer-service.main" target="11" />
+      <module name="consumer-service.test" target="11" />
       <module name="foodApp.order-service" target="11" />
       <module name="foodApp.order-service.main" target="11" />
       <module name="foodApp.order-service.test" target="11" />

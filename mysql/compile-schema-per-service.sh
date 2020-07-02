@@ -1,6 +1,6 @@
 #! /bin/bash -e
 
-for schema in restaurant_service order_service kitchen_service ;
+for schema in restaurant_service order_service kitchen_service consumer_service ;
 do
   user=${schema}_user
   password=${schema}_password
