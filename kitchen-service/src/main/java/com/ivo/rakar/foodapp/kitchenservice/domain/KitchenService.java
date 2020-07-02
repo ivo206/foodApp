@@ -37,7 +37,7 @@ public class KitchenService {
     }
 
     public List<Restaurant> getAllRestaurants() {
-        List<Restaurant> restaurants = new ArrayList<Restaurant>();
+        List<Restaurant> restaurants = new ArrayList<>();
         restaurantRepository.findAll().forEach(restaurants::add);
         return restaurants;
     }
